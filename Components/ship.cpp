@@ -1,5 +1,7 @@
 #include "StdAfx.h"
-#include "SpawnPoint.h"
+
+#include "ship.h"
+
 
 #include <CrySchematyc/Reflection/TypeDesc.h>
 #include <CrySchematyc/Utils/EnumFlags.h>
@@ -12,11 +14,13 @@
 #include <CrySchematyc/MathTypes.h>
 #include <CrySchematyc/Utils/SharedString.h>
 
-static void RegisterSpawnPointComponent(Schematyc::IEnvRegistrar& registrar)
+
+
+static void RegisterCShipComponent(Schematyc::IEnvRegistrar& registrar)
 {
 	Schematyc::CEnvRegistrationScope scope = registrar.Scope(IEntity::GetEntityScopeGUID());
 	{
-		Schematyc::CEnvRegistrationScope componentScope = scope.Register(SCHEMATYC_MAKE_ENV_COMPONENT(CSpawnPointComponent));
+		Schematyc::CEnvRegistrationScope componentScope = scope.Register(SCHEMATYC_MAKE_ENV_COMPONENT(CShip));
 		// Functions
 		{
 		}
@@ -24,9 +28,4 @@ static void RegisterSpawnPointComponent(Schematyc::IEnvRegistrar& registrar)
 }
 
 
-CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterSpawnPointComponent)
-
-void CSpawnPointComponent::SpawnEntity(IEntity* otherEntity)
-{
-	otherEntity->SetWorldTM(m_pEntity->GetWorldTM());
-}
+CRY_STATIC_AUTO_REGISTER_FUNCTION(&RegisterCShipComponent)

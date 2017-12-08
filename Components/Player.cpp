@@ -2,10 +2,14 @@
 #include "Player.h"
 
 #include "Bullet.h"
+#include "ship.h"
 #include "SpawnPoint.h"
 
 #include <CryRenderer/IRenderAuxGeom.h>
 #include <CryInput/IHardwareMouse.h>
+
+//Currently, This is our main function (Where everything logic wise is initialized._
+
 
 void CPlayerComponent::Initialize()
 {
