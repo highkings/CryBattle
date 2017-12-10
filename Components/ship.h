@@ -21,6 +21,14 @@ public:
 		desc.SetLabel("Ship");
 		desc.SetDescription("This is a ship point");
 		desc.SetComponentFlags({ IEntityComponent::EFlags::Transform, IEntityComponent::EFlags::Socket, IEntityComponent::EFlags::Attach });
+
 	}
+
+	virtual void Initialize() override;
+
+	void shipHop();
+
+protected:
+	int health;
 
 };
